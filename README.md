@@ -19,5 +19,5 @@ Desktop aplikacija dizajnirana za praćenje ličnih troškova, prihoda i vizueln
 3. Pokrenite projekat (Ctrl + R).
 
 
-username: adianesmelo
+username: adianesmelo,
 password: 1234
