@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1055</width>
+    <height>661</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>walletWatch</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #1a1a1a, stop:1 #000000);
+}
+QWidget#centralWidget {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #1a1a1a, stop:1 #000000);
+}
+QStatusBar {
+    background-color: #111111;
+    color: #666666;
+    border-top: 1px solid #2a0a0a;
+}
+QTableView {
+    background-color: #111111;
+    alternate-background-color: #1a1a1a;
+    color: #e0e0e0;
+    gridline-color: #2a2a2a;
+    border: 1px solid #3a1010;
+    border-radius: 6px;
+    font-family: Calibri;
+    font-size: 10pt;
+    selection-background-color: #b33a3a;
+    selection-color: white;
+    outline: none;
+}
+QTableView::item {
+    padding: 4px 8px;
+    border: none;
+}
+QHeaderView::section {
+    background-color: #2a0a0a;
+    color: #ffffff;
+    font-family: Calibri;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 6px;
+    border: none;
+    border-bottom: 2px solid #b33a3a;
+    border-right: 1px solid #1a1a1a;
+}
+QScrollBar:vertical {
+    background: #111111;
+    width: 10px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical {
+    background: #b33a3a;
+    border-radius: 5px;
+    min-height: 20px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>120</y>
+      <width>621</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI,Century Gothic,Calibri</family>
+      <pointsize>65</pointsize>
+      <weight>99</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    font-family: 'Segoe UI', 'Century Gothic', Calibri;
+    font-size: 65pt;
+    font-weight: 800; /* Ekstremno podebljano da izgleda 'tech' */
+    background-color: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt;span style=&quot;color: #ffffff;&quot;&gt;wallet&lt;/span&gt;&lt;span style=&quot;color: #b33a3a;&quot;&gt;Watch&lt;/span&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="unos">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>300</y>
+      <width>271</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    /* Početni izgled kada se program lansira */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2a0a0a, stop:1 #4a1212);
+    color: #ffffff;
+    border: 1px solid #5a1a1a;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: 'Segoe UI', 'Century Gothic', Calibri;
+    font-size: 11pt;
+    font-weight: bold;
+    
+    /* KLJUČ ZA ANIMACIJU: Glatki prelaz za sve promjene (boja, ivica, sjenka) u trajanju od 300ms */
+    qproperty-minimumSize: 80px 35px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* KADA SE MIŠ DOVUČE IZNAD DUGMETA (HOVER EFFECT) */
+QPushButton:hover {
+    /* Glatko posvijetli u jarku crvenu i dobije neonski sjaj */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #5a1515, stop:1 #9e2a2a);
+    border: 1px solid #ff4d4d;
+    color: #ffffff;
+    
+    /* Efekat blagog unutrašnjeg sjaja */
+    padding-bottom: 9px; 
+}
+
+/* KADA KORISNIK KLIKNE DUGME (PRESSED EFFECT) */
+QPushButton:pressed {
+    /* Duboka, tamna crvena boja koja daje privid da je dugme fizički utonulo */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #1a0505, stop:1 #330a0a);
+    border: 1px solid #b33a3a;
+    color: #b3b3b3;
+    
+    /* Pomjeranje teksta za 1 piksel dole i desno stvara savršen 3D osjećaj klika */
+    padding-top: 10px;
+    padding-left: 17px;
+}
+
+/* U slučaju da je neko dugme isključeno (disabled) */
+QPushButton:disabled {
+    background-color: #1a1a1a;
+    color: #555555;
+    border: 1px solid #2a2a2a;
+}</string>
+    </property>
+    <property name="text">
+     <string>Fiksni troškovi</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>310</y>
+      <width>271</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   qproperty-iconSize: 80px 80px;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2a0a0a, stop:1 #4a1212);
+    color: #ffffff;
+    border: 1px solid #5a1a1a;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: 'Calibri', 'Segoe UI';
+    font-size: 11pt;
+    font-weight: bold;
+    qproperty-minimumSize: 80px 35px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #5a1515, stop:1 #9e2a2a);
+    border: 1px solid #ff4d4d;
+    color: #ffffff;
+    padding-bottom: 9px; 
+}
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #1a0505, stop:1 #330a0a);
+    border: 1px solid #b33a3a;
+    color: #b3b3b3;
+    padding-top: 10px;
+    padding-left: 17px;
+}
+QPushButton:disabled {
+    background-color: #1a1a1a;
+    color: #555555;
+    border: 1px solid #2a2a2a;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../ikone.qrc">
+      <normaloff>:/ikona/ascending-graphic.png</normaloff>:/ikona/ascending-graphic.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>570</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2a0a0a;
+    color: #aaaaaa;
+    border: 1px solid #3a1010;
+    border-radius: 6px;
+    font-family: Calibri;
+    font-size: 7pt;
+}
+QPushButton:hover { background-color: #3a1010; color: white; }</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../ikone.qrc">
+      <normaloff>:/ikona/info.png</normaloff>:/ikona/info.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>570</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2a0a0a;
+    color: #aaaaaa;
+    border: 1px solid #3a1010;
+    border-radius: 6px;
+    font-family: Calibri;
+    font-size: 7pt;
+}
+QPushButton:hover { background-color: #3a1010; color: white; }</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../ikone.qrc">
+      <normaloff>:/ikona/customer-support.png</normaloff>:/ikona/customer-support.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>570</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2a0a0a;
+    color: #aaaaaa;
+    border: 1px solid #3a1010;
+    border-radius: 6px;
+    font-family: Calibri;
+    font-size: 7pt;
+}
+QPushButton:hover { background-color: #3a1010; color: white; }</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../ikone.qrc">
+      <normaloff>:/ikona/transfer.png</normaloff>:/ikona/transfer.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>570</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2a0a0a;
+    color: #aaaaaa;
+    border: 1px solid #3a1010;
+    border-radius: 6px;
+    font-family: Calibri;
+    font-size: 7pt;
+}
+QPushButton:hover { background-color: #3a1010; color: white; }</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../ikone.qrc">
+      <normaloff>:/ikona/user.png</normaloff>:/ikona/user.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="unos_2">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>420</y>
+      <width>271</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    /* Početni izgled kada se program lansira */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #2a0a0a, stop:1 #4a1212);
+    color: #ffffff;
+    border: 1px solid #5a1a1a;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: 'Segoe UI', 'Century Gothic', Calibri;
+    font-size: 11pt;
+    font-weight: bold;
+    
+    /* KLJUČ ZA ANIMACIJU: Glatki prelaz za sve promjene (boja, ivica, sjenka) u trajanju od 300ms */
+    qproperty-minimumSize: 80px 35px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* KADA SE MIŠ DOVUČE IZNAD DUGMETA (HOVER EFFECT) */
+QPushButton:hover {
+    /* Glatko posvijetli u jarku crvenu i dobije neonski sjaj */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #5a1515, stop:1 #9e2a2a);
+    border: 1px solid #ff4d4d;
+    color: #ffffff;
+    
+    /* Efekat blagog unutrašnjeg sjaja */
+    padding-bottom: 9px; 
+}
+
+/* KADA KORISNIK KLIKNE DUGME (PRESSED EFFECT) */
+QPushButton:pressed {
+    /* Duboka, tamna crvena boja koja daje privid da je dugme fizički utonulo */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #1a0505, stop:1 #330a0a);
+    border: 1px solid #b33a3a;
+    color: #b3b3b3;
+    
+    /* Pomjeranje teksta za 1 piksel dole i desno stvara savršen 3D osjećaj klika */
+    padding-top: 10px;
+    padding-left: 17px;
+}
+
+/* U slučaju da je neko dugme isključeno (disabled) */
+QPushButton:disabled {
+    background-color: #1a1a1a;
+    color: #555555;
+    border: 1px solid #2a2a2a;
+}</string>
+    </property>
+    <property name="text">
+     <string>Ostali troškovi</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="svitroskovi">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>80</y>
+      <width>256</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+    <property name="showGrid">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../ikone.qrc"/>
+ </resources>
+ <connections/>
+</ui>

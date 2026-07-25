@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Grafik</class>
+ <widget class="QDialog" name="Grafik">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>840</width>
+    <height>494</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QDialog, QWidget {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #1a1a1a, stop:1 #000000);
+}
+QLabel {
+    color: #cccccc;
+    font-family: Calibri;
+    font-size: 11pt;
+    background: transparent;
+}
+QComboBox {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #5a1a1a;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: Calibri;
+    font-size: 10pt;
+    min-height: 24px;
+}
+QComboBox:focus {
+    border: 1px solid #b33a3a;
+}
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+QComboBox QAbstractItemView {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #5a1a1a;
+    selection-background-color: #b33a3a;
+    outline: none;
+}
+QSpinBox {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #5a1a1a;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-family: Calibri;
+    font-size: 10pt;
+    min-height: 26px;
+}
+QSpinBox:focus {
+    border: 1px solid #b33a3a;
+}
+QSpinBox::up-button, QSpinBox::down-button {
+    background-color: #3a1010;
+    border: none;
+    width: 18px;
+    border-radius: 3px;
+}
+QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+    background-color: #b33a3a;
+}
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #7a1f1f, stop:1 #b33a3a);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: Calibri;
+    font-size: 11pt;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #8a2323, stop:1 #c14444);
+}
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #5c1515, stop:1 #8a2323);
+}
+QTableView {
+    background-color: #111111;
+    alternate-background-color: #1a1a1a;
+    color: #e0e0e0;
+    gridline-color: #2a2a2a;
+    border: 1px solid #3a1010;
+    border-radius: 6px;
+    font-family: Calibri;
+    font-size: 10pt;
+    selection-background-color: #b33a3a;
+    selection-color: white;
+    outline: none;
+}
+QTableView::item {
+    padding: 4px 8px;
+    border: none;
+}
+QHeaderView::section {
+    background-color: #2a0a0a;
+    color: #ffffff;
+    font-family: Calibri;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 6px;
+    border: none;
+    border-bottom: 2px solid #b33a3a;
+    border-right: 1px solid #1a1a1a;
+}
+QScrollBar:vertical {
+    background: #111111;
+    width: 10px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical {
+    background: #b33a3a;
+    border-radius: 5px;
+    min-height: 20px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
+   </string>
+  </property>
+  <widget class="QCustomPlot" name="Grafik2" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>791</width>
+     <height>361</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboMjesec">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>30</y>
+     <width>101</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Januar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Februar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Mart</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>April</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Maj</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Juni</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Juli</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>August</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Septembar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Oktobar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Novembar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Decembar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="btnNazad">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>450</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nazad</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

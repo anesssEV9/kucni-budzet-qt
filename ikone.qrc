@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/ikona">
+        <file>letter-w.png</file>
+        <file>ascending-graphic.png</file>
+        <file>business.png</file>
+        <file>transfer.png</file>
+        <file>user.png</file>
+        <file>customer-support.png</file>
+        <file>info.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>ascending-graphic.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OstaliTroskovi</class>
+ <widget class="QWidget" name="OstaliTroskovi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>818</width>
+    <height>607</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ostali troškovi</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QWidget {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #1a1a1a, stop:1 #000000);
+}
+QLabel {
+    color: #cccccc;
+    font-family: Calibri;
+    font-size: 11pt;
+    background: transparent;
+}
+QGroupBox {
+    background: transparent;
+    border: 1px solid #3a1010;
+    border-radius: 6px;
+    margin-top: 4px;
+    padding: 6px;
+}
+QLineEdit {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #5a1a1a;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: Calibri;
+    font-size: 10pt;
+    min-height: 24px;
+}
+QLineEdit:focus {
+    border: 1px solid #b33a3a;
+    background-color: #252525;
+}
+QDoubleSpinBox {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #5a1a1a;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-family: Calibri;
+    font-size: 10pt;
+    min-height: 24px;
+}
+QDoubleSpinBox:focus {
+    border: 1px solid #b33a3a;
+}
+QDoubleSpinBox::up-button, QDoubleSpinBox::down-button {
+    background-color: #3a1010;
+    border: none;
+    width: 18px;
+    border-radius: 3px;
+}
+QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover {
+    background-color: #b33a3a;
+}
+QComboBox {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #5a1a1a;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: Calibri;
+    font-size: 10pt;
+    min-height: 24px;
+}
+QComboBox:focus {
+    border: 1px solid #b33a3a;
+}
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+QComboBox QAbstractItemView {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #5a1a1a;
+    selection-background-color: #b33a3a;
+    outline: none;
+}
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #7a1f1f, stop:1 #b33a3a);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-family: Calibri;
+    font-size: 11pt;
+    font-weight: bold;
+    min-height: 28px;
+}
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #8a2323, stop:1 #c14444);
+}
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0 #5c1515, stop:1 #8a2323);
+}
+QTableView {
+    background-color: #111111;
+    alternate-background-color: #1a1a1a;
+    color: #e0e0e0;
+    gridline-color: #2a2a2a;
+    border: 1px solid #3a1010;
+    border-radius: 6px;
+    font-family: Calibri;
+    font-size: 10pt;
+    selection-background-color: #b33a3a;
+    selection-color: white;
+    outline: none;
+}
+QTableView::item {
+    padding: 4px 8px;
+    border: none;
+}
+QHeaderView::section {
+    background-color: #2a0a0a;
+    color: #ffffff;
+    font-family: Calibri;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 6px;
+    border: none;
+    border-bottom: 2px solid #b33a3a;
+    border-right: 1px solid #1a1a1a;
+}
+QScrollBar:vertical {
+    background: #111111;
+    width: 10px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical {
+    background: #b33a3a;
+    border-radius: 5px;
+    min-height: 20px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
+   </string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>300</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QLabel {
+    color: rgb(170,0,0);
+    font-family: Calibri;
+    font-size: 20pt;
+    font-weight: bold;
+    background: transparent;
+}
+    </string>
+   </property>
+   <property name="text">
+    <string>Ostali troškovi</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPrihodi">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>20</y>
+     <width>300</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QLabel {
+    font-family: Calibri;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #00cc55;
+    background: transparent;
+    border: 1px solid #00aa44;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+    </string>
+   </property>
+   <property name="text">
+    <string>Prihodi: 0.00 KM</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblMjesec">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>77</y>
+     <width>90</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mjesec:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>74</y>
+     <width>160</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Januar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Februar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Mart</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>April</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Maj</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Juni</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Juli</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>August</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Septembar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Oktobar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Novembar</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Decembar</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>120</y>
+     <width>711</width>
+     <height>54</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>380</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Naziv troška (npr. Restoran, Odjeća...)</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>10</y>
+      <width>110</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="suffix">
+     <string> KM</string>
+    </property>
+    <property name="maximum">
+     <double>999999.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>10</y>
+      <width>120</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Unos</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>180</y>
+     <width>671</width>
+     <height>354</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTableView QLineEdit {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #b33a3a;
+}</string>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <property name="showGrid">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QColumnView" name="columnView">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>550</y>
+     <width>91</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nazad</string>
+   </property>
+  </widget>
+  <zorder>lblPrihodi</zorder>
+  <zorder>lblMjesec</zorder>
+  <zorder>comboBox</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>tableView</zorder>
+  <zorder>columnView</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>label</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
