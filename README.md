@@ -18,5 +18,6 @@ Desktop aplikacija dizajnirana za praćenje ličnih troškova, prihoda i vizueln
 2. Otvorite `untitled.pro` u Qt Creator-u.
 3. Pokrenite projekat (Ctrl + R).
 
+
 username: adianesmelo
 password: 1234
